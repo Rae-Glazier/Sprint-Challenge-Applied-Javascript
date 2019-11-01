@@ -19,9 +19,9 @@ function Header() {
           title = document.createElement('h1'),
           temp = document.createElement('span');
 
-    header.classList.add = 'header';
-    date.classList.add = 'date';
-    temp.classList.add = 'temp';
+    header.classList.add('header');
+    date.classList.add('date');
+    temp.classList.add('temp');
 
     date.textContent = 'SMARCH 28, 2019';
     title.textContent = 'Lambda Times';

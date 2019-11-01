@@ -8,36 +8,36 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-const title = document.querySelector('.title');
+const topic = document.querySelector('.topics');
 
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
         console.log(response);
-        // response.data.topics.forEach(response => {
-        //     const newTab = tabComponent(response);
-        //     title.appendChild(newTab);
-        // })
+        response.data.topics.forEach(item => {
+            const newTab = tabComponent(item);
+            topic.appendChild(newTab);
+        })
     })
 
-const topicsArray = ['https://lambda-times-backend.herokuapp.com/topics'];
+// const topicsArray = ['javascript', 'bootstrap', 'technology', 'jquery', 'node.js'];
 
-topicsArray.forEach(obj => {
-    axios.get(obj)
-        .then(response => {
-            const newTab = tabComponent(response);
-            title.appendChild(newTab);
-        })
-})
+// topicsArray.forEach(obj => {
+// //     axios.get(obj)
+// //         .then(response => {
+// //             const newTab = tabComponent(response);
+// //             title.appendChild(newTab);
+// //         })
+// })
 
 
-function tabComponent (obj){
+function tabComponent (item){
     const tab = document.createElement('div');
 
-    tab.classList.add = 'tab';
+    tab.classList.add('tab');
 
-    tab.textContent = obj.data.topics;
-    console.log(obj.data.topics);
+    tab.textContent = item;
+    // console.log(obj.data.topics);
 
     return tab;
 }
