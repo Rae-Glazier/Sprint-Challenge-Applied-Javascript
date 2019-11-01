@@ -20,7 +20,7 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        console.log(response);
+        // console.log(response);
        response.data.articles.bootstrap.forEach(item =>{
             document.querySelector('.cards-container').appendChild(newCard(item));
        })
